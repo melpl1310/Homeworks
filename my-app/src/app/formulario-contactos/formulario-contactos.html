@@ -1,0 +1,29 @@
+<div class="formulario-pantalla">
+
+  <header class="formulario-header">
+
+    <button class="boton-volver" (click)="volver()"> ← </button>
+
+    <div>
+      <h1>Nuevo contacto</h1>
+      <p>Agrega una persona a tu lista de contactos</p>
+    </div>
+
+  </header>
+
+  <form (ngSubmit)="guardarContacto()">
+
+    <div class="campo">
+      <label id="nombre"> Nombre</label>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Ej. María López">
+    </div>
+
+    <div class="campo">
+      <label id="telefono"> Teléfono </label>
+      <input type="tel" id="telefono" name="telefono" [(ngModel)]="telefono" placeholder="Ej. 300 123 4567">
+    </div>
+
+    <button class="boton-guardar" type="submit"> Guardar </button>
+
+  </form>
+</div>

@@ -1,0 +1,80 @@
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contacto {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px;
+  background: white;
+  border: 1px solid #ece9f3;
+  border-radius: 17px;
+  box-shadow: 0 4px 12px rgba(80, 70, 110, 0.04);
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffb7db;
+  color: #ff4693;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.datos {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+}
+
+.datos strong {
+  color: #464354;
+  font-size: 14px;
+}
+
+.datos span {
+  color: #9693a5;
+  font-size: 13px;
+}
+
+.boton-eliminar {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 10px;
+  background: #ffd9de;
+  color: #fd0303;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+}
+.vacio {
+  padding: 45px 20px;
+  text-align: center;
+  background: white;
+  border: 1px solid #ece9f3;
+  border-radius: 18px;
+}
+
+.vacio h3 {
+  margin: 0;
+  color: #504d60;
+  font-size: 16px;
+}
+
+.vacio p {
+  margin: 7px 0 0;
+  color: #9b98a9;
+  font-size: 13px;
+}

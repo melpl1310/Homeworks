@@ -1,0 +1,30 @@
+<div class="lista">
+
+  @if (contactos.length === 0) {
+
+    <div class="vacio">
+      <h3>No tienes contactos</h3>
+      <p>Presiona el botón + para agregar uno.</p>
+    </div>
+
+  } @else {
+
+    @for (contacto of contactos; track $index) {
+
+      <div class="contacto">
+
+        <div class="avatar"> ♡ </div>
+
+        <div class="datos">
+          <strong>{{ contacto.nombre }}</strong>
+          <span>{{ contacto.telefono }}</span>
+        </div>
+
+        <button class="boton-eliminar" (click)="eliminarContacto($index)" title="Eliminar contacto"> - 
+        </button>
+
+      </div>
+
+    }
+  }
+</div>

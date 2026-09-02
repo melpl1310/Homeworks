@@ -1,0 +1,43 @@
+<div class="telefono">
+
+  @if (cargando) {
+
+    <div class="loader">
+      <div class="loader-icon"> ♡ </div>
+      <h2>Mis Contactos</h2>
+      <p>Cargando contactos...</p>
+
+      <div class="puntos">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+  } @else {
+
+    @if (mostrarFormulario) {
+
+      <app-formulario-contactos (contactoAgregado)="agregarContacto($event)" 
+      (cancelar)="cerrarFormulario()"></app-formulario-contactos>
+
+    } @else {
+
+      <div class="pantalla-principal">
+
+        <header>
+          <div>
+            <h1>Mis contactos</h1>
+            <p>{{ contactos.length }} contactos guardados</p>
+          </div>
+        </header>
+
+        <app-lista-contactos [contactos]="contactos" (contactoEliminado)="eliminarContacto($event)">
+        </app-lista-contactos>
+
+        <button class="boton-agregar" (click)="abrirFormulario()" title="Agregar contacto"> + </button>
+
+      </div>
+    }
+  }
+</div>
