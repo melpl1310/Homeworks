@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+}
+
+.music-page {
+  height: 570px;
+  width: 100%;
+  background: rgb(248, 226, 230);
+  font-family: Arial, sans-serif;
+}
+
+.mini-title {
+  margin: 0 0 4px;
+  color: #b28ca2;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+}
+
+.music-content {
+  width: 1000px;
+  height: 100%;
+  max-height: 620px;
+  margin: auto;
+  padding: 16px 0;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 18px;
+}
+
+.player-card {
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(226, 207, 220, 0.8);
+  box-shadow: 0 14px 34px rgba(150, 120, 150, 0.13);
+}
+
+.album-cover {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  background: pink;
+  box-shadow: 0 14px 26px rgba(170, 130, 160, 0.22);
+}
+
+.album-cover span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 48px;
+}
+
+.playing {
+  margin: 0 0 6px;
+  color: #bd91a6;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+}
+
+.song-info h2 {
+  margin: 0;
+  color: #66556a;
+  font-size: 19px;
+}
+
+.progress {
+  height: 5px;
+  margin: 18px 0 14px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #eee4ea;
+}
+
+.progress-fill {
+  width: 48%;
+  height: 100%;
+  border-radius: 10px;
+  background: #ff62ae;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+.next-button {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: #ffbed9;
+  color: #f8ecfa;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 7px 15px rgba(145, 120, 165, 0.16);
+}
+
+.next-label {
+  margin: 8px 0 0;
+  color: #aaa0ad;
+  font-size: 9px;
+}
+
+.playlist-card {
+  height: 100%;
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(226, 207, 220, 0.8);
+  box-shadow: 0 14px 34px rgba(150, 120, 150, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee5ea;
+}
+
+.playlist-header h3 {
+  margin: 0;
+  color: #69596c;
+  font-size: 17px;
+}
+
+.playlist-header > span {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #d9edf6;
+  color: #6f8d9c;
+  font-size: 9px;
+}
+
+.tools-row {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.tool-box {
+  padding: 10px;
+  border-radius: 14px;
+  background: #fff9fb;
+  border: 1px solid #f0e4ea;
+}
+
+.tool-box h4 {
+  margin: 0 0 7px;
+  color: #806b7b;
+  font-size: 9px;
+  letter-spacing: 0.4px;
+}
+
+.tool-row {
+  display: flex;
+  gap: 6px;
+}
+
+.tool-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+input {
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid #eadde6;
+  border-radius: 9px;
+  outline: none;
+  background: white;
+  color: #685a69;
+  font-size: 10px;
+}
+
+.add-button,
+.search-button {
+  border: none;
+  border-radius: 9px;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.add-button {
+  background: #f4d6e3;
+  color: #805f70;
+}
+
+.search-button {
+  background: #d9edf6;
+  color: #698594;
+}
+
+.peek-result {
+  margin: 7px 0 0;
+  color: #7893a0;
+  font-size: 8px;
+}
+
+.song-list {
+  flex: 1;
+  margin-top: 10px;
+  overflow-y: auto;
+  border-radius: 12px;
+}
+
+.song-item {
+  min-height: 38px;
+  padding: 6px 9px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-bottom: 1px solid #eee6eb;
+}
+
+.song-item.active {
+  background: #f7dce7;
+}
+
+.number {
+  width: 20px;
+  text-align: center;
+  color: #ae8fa1;
+  font-size: 9px;
+}
+
+.song-details {
+  flex: 1;
+}
+
+.song-details strong {
+  color: #68586b;
+  font-size: 10px;
+}
+
+.delete-button {
+  width: 23px;
+  height: 23px;
+  border: none;
+  border-radius: 8px;
+  background: #edf7fb;
+  color: #7895a4;
+  cursor: pointer;
+  font-size: 13px;
+}

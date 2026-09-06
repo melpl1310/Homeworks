@@ -1,0 +1,35 @@
+.main-nav {
+  height: 58px;
+  background: #fff9fb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eadde6;
+}
+
+.nav-logo {
+  color: #9b6f82;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 7px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #887681;
+  padding: 8px 15px;
+  border-radius: 18px;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  background: #f8dce7;
+  color: #775466;
+}

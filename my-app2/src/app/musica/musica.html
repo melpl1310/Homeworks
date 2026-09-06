@@ -1,0 +1,88 @@
+<div class="music-page">
+  <main class="music-content">
+    <section class="player-card">
+      <div class="album-cover"> <span> ♫ </span></div>
+
+      @if (currentSong()) {
+        <div class="song-info">
+          <p class="playing"> REPRODUCIENDO </p>
+          <h2>{{ currentSong()!.value }}</h2>
+        </div>
+      } @else {
+        <div class="song-info">
+          <h2>No hay canciones</h2>
+        </div>
+      }
+
+      <div class="progress">
+        <div class="progress-fill"></div>
+      </div>
+
+      <div class="controls">
+        <button class="next-button" (click)="nextSong()" [disabled]="!currentSong() || 
+        !currentSong()!.next" > ⏭ </button>
+      </div>
+
+      @if (currentSong() && currentSong()!.next) {
+        <p class="next-label">Siguiente canción</p>
+      } @else {
+        <p class="next-label">Fin de la lista</p>
+      }
+    </section>
+
+    <section class="playlist-card">
+
+      <div class="playlist-header">
+        <div>
+          <p class="mini-title">PLAYLIST</p>
+          <h3>Canciones</h3>
+        </div>
+        <span>{{ songs().length }}</span>
+      </div>
+
+      <div class="tools-row">
+        <div class="tool-box">
+          <h4>Agregar canción</h4>
+          <div class="tool-row">
+            <input #titleInput type="text" placeholder="Nombre de la canción" />
+            <button class="add-button" (click)="addSong(titleInput.value); titleInput.value = ''" > 
+              + Agregar </button>
+          </div>
+        </div>
+
+        <div class="tool-box">
+          <h4>Buscar canción</h4>
+          <div class="tool-row">
+            <input #searchInput type="text" placeholder="Nombre de la canción" />
+            <button class="search-button" (click)="searchSong(searchInput.value)" > Buscar </button>
+          </div>
+
+          @if (peekedSong()) {
+            <p class="peek-result"> ✓ Reproduciendo: <strong>{{ peekedSong()!.value }}</strong> </p>
+          } @else if (searched()) {
+            <p class="peek-result"> No se encontró la canción. </p>
+          }
+        </div>
+      </div>
+
+      <div class="song-list">
+        @for (song of songs(); track song.value) {
+          <div class="song-item" [class.active]="song === currentSong()" >
+            <div class="number">
+              @if (song === currentSong()) { ♪ } 
+              @else {
+                {{ $index + 1 }}
+              }
+            </div>
+
+            <div class="song-details">
+              <strong>{{ song.value }}</strong>
+            </div>
+            <button class="delete-button" (click)="removeSong(song.value)" > × </button>
+          </div>
+        }
+      </div>
+
+    </section>
+  </main>
+</div>

@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+}
+
+.browser-page {
+  height: calc(100vh - 58px);
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+  background: rgb(250, 221, 232);
+  font-family: Arial, sans-serif;
+  color: #665a6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.browser-content {
+  width: min(1250px, 98%);
+  height: min(720px, 96%);
+  display: flex;
+}
+
+.browser-frame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(226, 207, 220, 0.8);
+  box-shadow:
+    0 18px 40px rgba(100, 80, 110, 0.18);
+}
+
+.tabs-bar {
+  min-height: 55px;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 10px 12px 0;
+  background: rgba(255, 255, 255, 0.65);
+  border-bottom: 1px solid #e8dfe7;
+}
+
+.browser-tab {
+  min-width: 150px;
+  max-width: 210px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border-radius: 12px 12px 0 0;
+  background: #eeeaf0;
+  cursor: pointer;
+}
+
+.browser-tab.active {
+  background: white;
+  border: 1px solid #e6dce6;
+  border-bottom: 1px solid white;
+}
+
+.tab-icon {
+  font-size: 14px;
+}
+
+.tab-name {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  color: #68586b;
+  white-space: nowrap;
+}
+
+.browser-tab.active .tab-name {
+  font-weight: bold;
+}
+
+.tab-close {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #9c8e9b;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.new-page-button {
+  min-width: 90px;
+  height: 36px;
+  margin-bottom: 2px;
+  border: none;
+  border-radius: 10px;
+  background: #d8edf6;
+  color: #4f7889;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.frame-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: white;
+  border-bottom: 1px solid #ece3ec;
+}
+
+.frame-btn {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: #f1f0f3;
+  color: #756979;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.frame-address {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 15px;
+  border-radius: 20px;
+  background: #f1f3f4;
+  color: #6f6470;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.new-page {
+  border: none;
+  padding: 10px 17px;
+  border-radius: 10px;
+  background: #fdbed6;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.frame-search {
+  display: flex;
+  gap: 10px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #ece3ec;
+}
+
+.frame-search input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 15px;
+  border: 1px solid #e2d8e1;
+  border-radius: 10px;
+  outline: none;
+  background: white;
+  color: #685a69;
+  font-size: 13px;
+}
+
+.frame-search input:focus {
+  border-color: #cbb5c5;
+  box-shadow:
+    0 0 0 3px rgba(218, 196, 213, 0.3);
+}
+
+.frame-search button {
+  min-width: 100px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background: #6f86c7;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.frame-not-found {
+  margin: 0;
+  padding: 0 18px 10px;
+  color: #b47f86;
+  font-size: 11px;
+}
+
+.frame-body {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.frame-icon {
+  width: 85px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    linear-gradient(135deg, #d4eaf4, #ddd0ef);
+  font-size: 38px;
+  box-shadow:
+    0 10px 25px rgba(130, 145, 170, 0.18);
+}
+
+.frame-position {
+  margin: 18px 0 5px;
+  color: #a88da0;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+
+.frame-body h2 {
+  margin: 5px 0;
+  color: #4f4653;
+  font-size: 32px;
+}
+
+.frame-empty {
+  margin-top: 8px;
+  color: #99909b;
+  font-size: 13px;
+}
+
+.add-page-area {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #faf9fb;
+  border-bottom: 1px solid #ece3ec;
+}
+
+.add-page-area input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #e2d8e1;
+  border-radius: 10px;
+  outline: none;
+}
+
+.add-page-area button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #d8edf6;
+  color: #4f7889;
+  font-weight: bold;
+  cursor: pointer;
+}

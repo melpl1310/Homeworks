@@ -1,0 +1,57 @@
+<div class="browser-page">
+  <main class="browser-content">
+    <section class="browser-frame">
+      
+      <div class="tabs-bar" #tabsBar>
+        @for (page of pages(); track page.value) {
+          <div class="browser-tab" [class.active]="page === currentPage()" (click)="goToPage(page)">
+            <span class="tab-icon"> 🌐 </span><span class="tab-name">
+              {{ page.value }}</span>
+            <button class="tab-close" (click)="$event.stopPropagation();removePage(page.value)"> × </button>
+          </div>
+        }
+        <button class="new-page-button" (click)="showAddPage.set(!showAddPage())"> + Nueva </button>
+      </div>
+
+      <div class="frame-bar">
+        <button class="frame-btn" (click)="goBack()" [disabled]="!canGoBack()" > ← </button>
+        <button class="frame-btn" (click)="goForward()" [disabled]="!canGoForward()" > → </button>
+        <div class="frame-address">
+          <span> {{ currentPage()?.value ?? 'Sin páginas' }} </span>
+        </div>
+      </div>
+
+      @if (showAddPage()) {
+        <div class="add-page-area">
+          <input #nameInput type="text" placeholder="Nombre de la nueva página" (keyup.enter) =
+          "addPage(nameInput.value); nameInput.value = ''; showAddPage.set(false)" />
+          <button (click)=" addPage(nameInput.value); nameInput.value = ''; showAddPage.set(false)" >
+            Agregar
+          </button>
+        </div>
+      }
+
+      <div class="frame-search">
+        <input #searchInput type="text" placeholder="Buscar una página..." (keyup.enter) =
+          "searchPage(searchInput.value)" />
+        <button (click)="searchPage(searchInput.value)" > Buscar </button>
+      </div>
+
+      @if (searched() && !searchFound()) {
+        <p class="frame-not-found"> No se encontró esa página. </p>}
+      <div class="frame-body">
+        @if (currentPage()) {
+          <div class="frame-icon"> 🌐 </div>
+          <p class="frame-position"> {{ currentIndex() }} / {{ pages().length }} </p>
+          <h2> {{ currentPage()!.value }} </h2>
+          <p class="frame-empty"> Estás visitando esta página. </p>
+        } @else {
+          <div class="frame-icon"> 🌐 </div>
+          <h2> No hay páginas </h2>
+          <p class="frame-empty"> Agrega una página para comenzar </p>
+        }
+      </div>
+
+    </section>
+  </main>
+</div>
