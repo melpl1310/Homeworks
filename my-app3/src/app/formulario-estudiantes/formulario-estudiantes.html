@@ -1,0 +1,12 @@
+<div class="form-card">
+
+  <h2>Registrar estudiante</h2>
+
+  <div class="form">
+    <input type="text" placeholder="Nombre" (change)="changeName($event)"/>
+    <input type="number" placeholder="Edad" (change)="changeAge($event)"/>
+    <input type="text" placeholder="Código" (change)="changeCode($event)" />
+    <button (click)="addStudent()"> Agregar </button>
+    
+  </div>
+</div>

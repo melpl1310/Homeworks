@@ -1,0 +1,14 @@
+<div class="container">
+
+  <div class="header"><h1>Registro de Estudiantes</h1></div>
+
+  <div class="content">
+    
+    <div class="left-column"><app-formulario-estudiantes (studentAdded)="addStudent($event)">
+      </app-formulario-estudiantes></div>
+
+    <div class="right-column"><app-lista-estudiantes [students]="students()" (studentDeleted)=
+      "deleteStudent($event)"></app-lista-estudiantes></div>
+  
+    </div>
+</div>

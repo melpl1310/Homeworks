@@ -1,0 +1,27 @@
+<div class="list-card">
+
+  <div class="list-title">
+    <h2>Estudiantes registrados</h2>
+    <span>{{ students.length }}</span>
+  </div>
+
+  @if (students.length === 0) {
+    <div class="empty"><p>Todavía no hay estudiantes registrados.</p></div>
+  } @else {
+    <div class="students">
+      @for (student of students; track student.code) {
+        <div class="student-card">
+          <div class="student-icon">🧑‍🎓</div>
+          <div class="student-info">
+            <h3>
+              {{ student.name }}
+            </h3>
+            <p><strong>Código: </strong>{{ student.code }} </p>
+            <p><strong>Edad: </strong>{{ student.age }} años</p>
+          </div>
+          <button class="delete-button" (click)="deleteStudent(student.code)"> x </button>
+        </div>
+      }
+    </div>
+  }
+</div>
