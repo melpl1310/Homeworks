@@ -1,0 +1,23 @@
+<div class="formulario">
+
+  <h2>Registrar paciente</h2>
+
+  <label for="nombre"> Nombre: </label>
+
+  <input id="nombre" type="text" [(ngModel)]="nombre" placeholder="Ingrese el nombre">
+
+  <label for="apellido"> Apellido: </label>
+
+  <input id="apellido" type="text" [(ngModel)]="apellido" placeholder="Ingrese el apellido">
+
+  <label for="edad"> Edad: </label>
+
+  <input id="edad" type="number" [(ngModel)]="edad" placeholder="Ingrese la edad">
+
+  <label for="motivo"> Motivo de la consulta: </label>
+
+  <input id="motivo" type="text" [(ngModel)]="motivo" placeholder="Ingrese el motivo de la consulta">
+
+  <button (click)="agregarPaciente()"> Agregar paciente </button>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="comite">
+
+  <h2>Comité administrativo</h2>
+
+  @if (comite.length === 0) {
+    <p class="vacio"> No hay integrantes. </p>
+
+  } @else {
+    @for (persona of comite; track $index) {
+      <div class="integrante"> {{ persona }} </div>
+    }
+  }
+</div>

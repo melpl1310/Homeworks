@@ -1,0 +1,26 @@
+.comite {
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+  color: #a66bb5;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.integrante {
+  background: #f8f0fc;
+  border: 2px solid #dfc9e9;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #76547d;
+  font-weight: bold;
+}
+
+.vacio {
+  text-align: center;
+  color: #9b8791;
+}

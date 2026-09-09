@@ -1,0 +1,27 @@
+.medico {
+  text-align: center;
+}
+
+h2 {
+  color: #6b9db8;
+
+  margin-top: 0;
+
+  margin-bottom: 20px;
+}
+
+.nombre-medico {
+  background: #eef8fc;
+
+  border: 2px solid #b9dced;
+
+  border-radius: 15px;
+
+  padding: 18px;
+
+  color: #59859d;
+
+  font-size: 20px;
+
+  font-weight: bold;
+}

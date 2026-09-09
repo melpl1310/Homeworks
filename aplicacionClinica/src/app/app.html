@@ -1,0 +1,52 @@
+<div class="contenedor">
+
+  <h1>Registro de Pacientes</h1>
+
+  <div class="contenido">
+
+    <div class="tarjeta formulario-card">
+
+      <app-formulario-pacientes
+        (pacienteAgregado)="agregarPaciente($event)">
+      </app-formulario-pacientes>
+
+    </div>
+
+
+    <div class="tarjeta medico-card">
+
+      <app-rotacion-medicos></app-rotacion-medicos>
+
+    </div>
+
+
+    <div class="tarjeta pacientes-card">
+
+      <app-lista-pacientes
+        [pacientes]="pacientes"
+        (pacienteAtendido)="atenderPaciente($event)">
+      </app-lista-pacientes>
+
+    </div>
+
+
+    <div class="tarjeta historial-card">
+
+      <app-historial
+      [historial]="historial.print()">
+      </app-historial>
+
+    </div>
+
+
+    <div class="tarjeta comite-card">
+
+      <app-comite-administrativo
+        [comite]="comite.print()">
+      </app-comite-administrativo>
+
+    </div>
+
+  </div>
+
+</div>

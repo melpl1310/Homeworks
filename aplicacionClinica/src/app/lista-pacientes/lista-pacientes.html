@@ -1,0 +1,21 @@
+<div class="lista">
+
+  <h2>Pacientes en espera</h2>
+
+  @if (pacientes.length === 0) {
+
+    <p class="vacio"> No hay pacientes en espera. </p>
+
+  } @else {
+
+    @for (paciente of pacientes; track $index) {
+      <div class="paciente">
+        <p> <strong>Nombre:</strong> {{ paciente.nombre }} </p>
+        <p> <strong>Apellido:</strong> {{ paciente.apellido }} </p>
+        <p> <strong>Edad:</strong> {{ paciente.edad }} </p>
+        <p> <strong>Motivo:</strong> {{ paciente.motivo }} </p>
+        <button (click)="atenderPaciente($index)"> Atender paciente </button>
+      </div>
+    }
+  }
+</div>

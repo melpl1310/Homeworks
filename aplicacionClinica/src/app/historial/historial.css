@@ -1,0 +1,39 @@
+.historial {
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+
+  color: #a66bb5;
+
+  margin-top: 0;
+
+  margin-bottom: 18px;
+}
+
+.registro {
+  background: #f8f0fc;
+
+  border: 2px solid #dfcceb;
+
+  border-radius: 14px;
+
+  padding: 13px;
+
+  margin-bottom: 10px;
+}
+
+.registro p {
+  margin: 6px 0;
+}
+
+.registro strong {
+  color: #9660a5;
+}
+
+.vacio {
+  text-align: center;
+
+  color: #9b8791;
+}

@@ -1,0 +1,24 @@
+<div class="historial">
+
+  <h2>Historial de atención</h2>
+
+  @if (historial.length === 0) {
+
+    <p class="vacio"> No hay pacientes atendidos.</p>
+
+  } @else {
+
+    @for (paciente of historial; track $index) {
+      <div class="registro">
+        <p> <strong>Nombre:</strong> {{ paciente.nombre }} </p>
+
+        <p> <strong>Apellido:</strong> {{ paciente.apellido }} </p>
+
+        <p> <strong>Edad:</strong> {{ paciente.edad }} </p>
+
+        <p> <strong>Motivo:</strong> {{ paciente.motivo }} </p>
+
+      </div>
+    }
+  }
+</div>
