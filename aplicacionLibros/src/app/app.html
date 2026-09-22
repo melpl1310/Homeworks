@@ -1,0 +1,18 @@
+<div class="contenedor">
+
+  <h1> Biblioteca de Libros</h1>
+
+  <div class="contenido">
+    <div class="tarjeta formulario-card">
+      <h2>Nuevo libro</h2>
+      <app-formulario-libros (libroAgregado)="agregarLibro($event)"></app-formulario-libros>
+    </div>
+
+    <div class="tarjeta lista-card">
+      <h2>Pila de libros</h2>
+      <app-lista-libros [libros]="libros"> </app-lista-libros>
+      <button class="botonEliminar" type="button" (click)="eliminarUltimoLibro()"> Eliminar </button>
+    </div>
+
+  </div>
+</div>

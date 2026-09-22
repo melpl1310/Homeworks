@@ -1,0 +1,15 @@
+<div class="formulario">
+  <label for="nombre">Nombre:</label>
+  <input id="nombre" name="nombre" type="text" [(ngModel)]="nombre" placeholder="Nombre del libro">
+
+  <label for="isbn">ISBN:</label>
+  <input id="isbn" name="isbn" type="text" [(ngModel)]="isbn" placeholder="ISBN del libro">
+
+  <label for="autor">Autor:</label>
+  <input id="autor" name="autor" type="text" [(ngModel)]="autor" placeholder="Autor del libro">
+
+  <label for="editorial">Editorial:</label>
+  <input id="editorial" name="editorial" type="text" [(ngModel)]="editorial" placeholder="Editorial del libro">
+
+  <button type="button" (click)="agregarLibro()">Agregar</button>
+</div>

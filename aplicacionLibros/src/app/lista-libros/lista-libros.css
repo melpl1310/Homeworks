@@ -1,0 +1,44 @@
+.pila {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.libro {
+  background: #ffffff;
+  border-left: 6px solid #c9b5e8;
+  border-radius: 12px;
+  padding: 12px 15px;
+  box-shadow: 0 4px 12px rgba(100, 80, 120, 0.08);
+}
+
+.libro:first-child {
+  border-left-color: #d6a8c9;
+  background: #fff8fc;
+}
+
+.libro-titulo {
+  color: #73577c;
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.dato {
+  color: #756b78;
+  margin: 3px 0;
+  font-size: 13px;
+}
+
+.dato strong {
+  color: #8a6b8e;
+}
+
+.vacio {
+  text-align: center;
+  padding: 35px 10px;
+  color: #9b8da0;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px dashed #dccde0;
+}

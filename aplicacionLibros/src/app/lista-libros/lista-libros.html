@@ -1,0 +1,13 @@
+<div class="pila">
+  @for (libro of libros.slice().reverse(); track $index) {
+    <div class="libro">
+      <div class="libro-titulo">{{ libro.nombre }}</div>
+      <div class="dato"><strong>ISBN:</strong> {{ libro.isbn }}</div>
+      <div class="dato"><strong>Autor:</strong> {{ libro.autor }}</div>
+      <div class="dato"><strong>Editorial:</strong> {{ libro.editorial }}</div>
+    </div>
+  }
+  @if (libros.length === 0) {
+    <div class="vacio">No hay libros en la pila.</div>
+  }
+</div>
