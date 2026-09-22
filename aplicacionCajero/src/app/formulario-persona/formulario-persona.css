@@ -1,0 +1,33 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  color: #6d5264;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #e2bfd3;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: #d88bb2;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #c8759f;
+}

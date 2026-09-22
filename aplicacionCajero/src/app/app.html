@@ -1,0 +1,16 @@
+<div class="contenedor">
+  <h1>Cajero Automático</h1>
+
+  <div class="contenido">
+    <div class="tarjeta formulario">
+      <h2>Registrar persona</h2>
+      <app-formulario-persona (personaAgregada)="agregarPersona($event)"></app-formulario-persona>
+    </div>
+
+    <div class="tarjeta lista">
+      <h2>Personas en la cola</h2>
+      <app-lista-persona [personas]="personas"></app-lista-persona>
+    </div>
+    
+  </div>
+</div>

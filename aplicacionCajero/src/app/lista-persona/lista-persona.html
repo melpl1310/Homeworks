@@ -1,0 +1,12 @@
+@if (personas.length === 0) {
+  <p class="vacio"> No hay personas en la cola.</p>
+
+} @else {
+  @for (persona of personas; track $index) {
+    <div class="persona">
+      <h3>{{ $index + 1 }}. {{ persona.nombre }}</h3>
+      <p><strong>Monto:</strong> ${{ persona.monto }}</p>
+      <p><strong>Llegada:</strong> {{ persona.fechaLlegada | date:'dd/MM/yyyy HH:mm:ss' }}</p>
+    </div>
+  }
+}

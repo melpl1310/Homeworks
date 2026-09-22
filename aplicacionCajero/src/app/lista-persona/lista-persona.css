@@ -1,0 +1,22 @@
+.persona {
+  background: #f8e6f0;
+  border-radius: 10px;
+  padding: 7px 15px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+}
+
+.persona h3 {
+  margin-top: 0;
+  color: #8d4f75;
+}
+
+.persona p {
+  margin: 7px 0;
+  color: #5f5260;
+}
+
+.vacio {
+  text-align: center;
+  color: #888;
+}
