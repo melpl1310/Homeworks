@@ -1,0 +1,218 @@
+:host {
+  display: block;
+}
+
+.pagina {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 25px;
+  background: linear-gradient(135deg, #fff3f8 0%, #f7f0ff 50%, #eef7ff 100%);
+  font-family: Arial, sans-serif;
+  color: #5f4b66;
+}
+
+.encabezado {
+  max-width: 1000px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icono {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: #f8d8e8;
+  font-size: 31px;
+  box-shadow: 0 7px 18px rgba(130, 100, 150, 0.12);
+}
+
+.encabezado h1 {
+  margin: 0;
+  font-size: 29px;
+  color: #72527f;
+}
+
+.encabezado p {
+  margin: 5px 0 0;
+  color: #927f9e;
+}
+
+.controles {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.tarjeta,
+.recorrido {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #eadff0;
+  border-radius: 21px;
+  box-shadow: 0 8px 24px rgba(130, 100, 150, 0.10);
+}
+
+.tarjeta {
+  padding: 20px;
+}
+
+.tarjeta h2 {
+  margin: 0 0 5px;
+  color: #72527f;
+  font-size: 19px;
+}
+
+.tarjeta p {
+  margin: 0 0 14px;
+  color: #9a89a3;
+  font-size: 14px;
+}
+
+.fila {
+  display: flex;
+  gap: 9px;
+}
+
+input {
+  min-width: 0;
+  flex: 1;
+  padding: 11px 13px;
+  border: 2px solid #eadff0;
+  border-radius: 12px;
+  background: #fffafd;
+  color: #5f4b66;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #c9a9dc;
+}
+
+button {
+  padding: 10px 17px;
+  border: none;
+  border-radius: 12px;
+  background: #cba8dd;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #b991d0;
+}
+
+.mensaje {
+  max-width: 960px;
+  margin: 15px auto;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: #eef7ff;
+  border: 1px solid #d9eafa;
+  color: #68718a;
+  text-align: center;
+  font-weight: bold;
+}
+
+.arbol-contenedor {
+  max-width: 960px;
+  margin: 18px auto;
+  padding: 20px;
+}
+
+.arbol-contenedor h2 {
+  margin: 0 0 8px;
+  color: #72527f;
+  font-size: 19px;
+}
+
+.arbol {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recorridos {
+  max-width: 1000px;
+  margin: 18px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.recorrido {
+  padding: 18px;
+}
+
+.titulo-recorrido {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titulo-recorrido span {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #e7ddf5;
+  color: #72527f;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.titulo-recorrido h3 {
+  margin: 0;
+  color: #72527f;
+}
+
+.formula {
+  margin: 10px 0;
+  font-size: 12px;
+  color: #9a89a3;
+}
+
+.numeros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.numeros span {
+  padding: 7px 10px;
+  border-radius: 9px;
+  background: #f8d8e8;
+  color: #654d6e;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+@media (max-width: 750px) {
+  .controles,
+  .recorridos {
+    grid-template-columns: 1fr;
+  }
+
+  .pagina {
+    padding: 15px;
+  }
+
+  .fila {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}

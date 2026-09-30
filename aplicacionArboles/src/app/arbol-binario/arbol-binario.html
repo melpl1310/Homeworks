@@ -1,0 +1,114 @@
+<div class="pagina">
+  <div class="encabezado">
+
+    <div>
+      <h1>Árbol Binario</h1>
+    </div>
+  </div>
+
+  <div class="controles">
+    <div class="tarjeta">
+      <h2>Insertar número</h2>
+
+      <div class="fila">
+        <input
+          #numero
+          type="number"
+          placeholder="Ej. 50"
+        >
+
+        <button
+          (click)="agregar(numero.value); numero.value = ''"
+        >
+          Insertar
+        </button>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <h2>Buscar número</h2>
+
+      <div class="fila">
+        <input
+          #numeroBuscar
+          type="number"
+          placeholder="Ej. 30"
+        >
+
+        <button
+          (click)="buscar(numeroBuscar.value)"
+        >
+          Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  @if (mensaje) {
+    <div class="mensaje">
+      {{ mensaje }}
+    </div>
+  }
+
+  <div class="tarjeta arbol-contenedor">
+    <h2>Visualización del árbol</h2>
+
+    <div
+      id="arbol"
+      class="arbol"
+    ></div>
+  </div>
+
+  <div class="recorridos">
+    <div class="recorrido">
+      <div class="titulo-recorrido">
+        <span>01</span>
+        <h3>InOrder</h3>
+      </div>
+
+      <p class="formula">
+        Izquierda → Nodo → Derecha
+      </p>
+
+      <div class="numeros">
+        @for (numero of inOrden; track $index) {
+          <span>{{ numero }}</span>
+        }
+      </div>
+    </div>
+
+    <div class="recorrido">
+      <div class="titulo-recorrido">
+        <span>02</span>
+        <h3>PreOrder</h3>
+      </div>
+
+      <p class="formula">
+        Nodo → Izquierda → Derecha
+      </p>
+
+      <div class="numeros">
+        @for (numero of preOrden; track $index) {
+          <span>{{ numero }}</span>
+        }
+      </div>
+    </div>
+
+    <div class="recorrido">
+      <div class="titulo-recorrido">
+        <span>03</span>
+        <h3>PostOrder</h3>
+      </div>
+
+      <p class="formula">
+        Izquierda → Derecha → Nodo
+      </p>
+
+      <div class="numeros">
+        @for (numero of postOrden; track $index) {
+          <span>{{ numero }}</span>
+        }
+      </div>
+    </div>
+  </div>
+</div>
