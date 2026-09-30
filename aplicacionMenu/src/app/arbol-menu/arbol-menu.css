@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+  height: auto;
+  background: #f4eff9;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+.telefono {
+  width: 360px;
+  height: 560px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(70, 50, 90, 0.18);
+  border: 1px solid #e4d9ed;
+}
+
+.barra-superior {
+  height: 70px;
+  background: #ffc1db;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  color: #eb4a8d;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.boton-menu {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.boton-menu span {
+  width: 20px;
+  height: 2px;
+  background: #49365c;
+  border-radius: 5px;
+}
+
+.menu {
+  padding: 18px 15px;
+}
+
+.item-principal {
+  margin-bottom: 7px;
+}
+
+.boton-item {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 12px;
+  background: #f8edf3;
+  color: #49365c;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+}
+
+.boton-item.con-submenu:hover {
+  background: #f2dae6;
+}
+
+.flecha {
+  font-size: 18px;
+  color: #8b566f;
+}
+
+.submenu {
+  margin: 5px 0 5px 12px;
+  padding: 5px;
+  background: #f8f5fb;
+  border-radius: 10px;
+}
+
+.boton-submenu {
+  width: 100%;
+  height: 40px;
+  padding: 0 14px;
+  border: none;
+  background: transparent;
+  color: #62546c;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  cursor: default;
+}
+
+.boton-submenu:hover {
+  background: #eee5f5;
+}
+
+.inicio {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  color: #655572;
+}
+
+.inicio h1 {
+  margin-bottom: 8px;
+  color: #49365c;
+}
+
+.inicio p {
+  margin: 0;
+  font-size: 14px;
+}
