@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+}
+
+.pagina-inicio {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff3f8 0%, #f7f0ff 50%, #eef7ff 100%);
+  font-family: Arial, sans-serif;
+}
+
+.tarjeta-inicio {
+  width: 500px;
+  padding: 35px;
+  background: white;
+  border: 1px solid #eadff0;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(130, 100, 150, 0.12);
+  text-align: center;
+}
+
+.tarjeta-inicio h1 {
+  margin: 0 0 12px;
+  color: #72527f;
+  font-size: 30px;
+}
+
+.usuario {
+  margin: 0 0 8px;
+  color: #72527f;
+  font-size: 15px;
+}
+
+.descripcion {
+  margin: 0 0 25px;
+  color: #9a89a3;
+  font-size: 14px;
+}
+
+.opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.opcion {
+  padding: 18px;
+  border-radius: 15px;
+  background: #f8edf3;
+  color: #49365c;
+  text-decoration: none;
+  text-align: left;
+  transition: 0.2s;
+}
+
+.opcion:hover {
+  background: #f2dae6;
+  transform: translateY(-2px);
+}
+
+.opcion span {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.opcion small {
+  display: block;
+  margin-top: 5px;
+  color: #927f9e;
+  font-size: 13px;
+}
+
+.boton-salir {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #cba8dd;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.boton-salir:hover {
+  background: #b991d0;
+}

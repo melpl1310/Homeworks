@@ -1,0 +1,38 @@
+<div class="pagina-inicio">
+  <div class="tarjeta-inicio">
+
+    <h1>Challenge 08</h1>
+
+    @if (authService.usuario()) {
+      <p class="usuario">
+        Usuario: <strong>{{ authService.usuario() }}</strong>
+      </p>
+    }
+
+    <p class="descripcion">
+      Selecciona uno de los ejercicios para continuar.
+    </p>
+
+    <div class="opciones">
+
+      <a routerLink="/arbol-menu" class="opcion">
+        <span>Árbol N-ario</span>
+        <small>Ejercicio del menú</small>
+      </a>
+
+      <a routerLink="/arbol-binario" class="opcion">
+        <span>Árbol Binario</span>
+        <small>Ejercicio del árbol</small>
+      </a>
+
+    </div>
+
+    <button
+      class="boton-salir"
+      (click)="cerrarSesion()"
+    >
+      Cerrar sesión
+    </button>
+
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="telefono">
+  <div class="barra-superior">
+    <span></span>
+
+    <button class="boton-menu" (click)="abrirMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  @if (menuAbierto) {
+    <div class="menu">
+      @for (menu of menus; track menu.titulo) {
+        <div class="item-principal">
+          <button
+            class="boton-item"
+            [class.con-submenu]="menu.submenus"
+            (click)="desplegar(menu)">
+
+            <span>{{ menu.titulo }}</span>
+
+            @if (menu.submenus) {
+              <span class="flecha">
+                {{ menu.abierto ? '⌃' : '⌄' }}
+              </span>
+            }
+          </button>
+
+          @if (menu.submenus && menu.abierto) {
+            <div class="submenu">
+              @for (submenu of menu.submenus; track submenu.titulo) {
+                <button class="boton-submenu">
+                  {{ submenu.titulo }}
+                </button>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
+
+  @if (!menuAbierto) {
+    <div class="inicio">
+      <h1>Menú</h1>
+      <p>Presiona las tres rayas para comenzar</p>
+    </div>
+  }
+</div>
