@@ -1,0 +1,45 @@
+<div class="pagina-login">
+  <div class="tarjeta-login">
+
+    <div class="icono">♡</div>
+    <h1>¡Qué bueno verte!</h1>
+    <p class="descripcion">Ingresa a tu cuenta para continuar.</p>
+
+    <form (ngSubmit)="iniciarSesion()">
+      <label for="email">Correo electrónico</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="tucorreo@ejemplo.com"
+        autocomplete="email"
+        required
+      />
+
+      <label for="password">Contraseña</label>
+      <input
+        id="password"
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        placeholder="Ingresa tu contraseña"
+        autocomplete="current-password"
+        required
+      />
+
+      @if (error) {
+        <p class="mensaje-error">{{ error }}</p>
+      }
+
+      <button type="submit" [disabled]="cargando">
+        {{ cargando ? 'Ingresando...' : 'Iniciar sesión' }}
+      </button>
+    </form>
+
+    <p class="registro">
+      ¿No tienes cuenta?
+      <a routerLink="/register">Regístrate aquí</a>
+    </p>
+  </div>
+</div>

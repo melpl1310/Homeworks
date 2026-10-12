@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+$rosa: #d66ca4;
+$lila: #f3e8ff;
+$fondo: #fce7f3;
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: $fondo;
+}
+
+button,
+input {
+  font-family: inherit;
+}

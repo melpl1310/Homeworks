@@ -1,0 +1,78 @@
+.inicio {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #fce7f3, #f3e8ff, #e0f2fe);
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: 430px;
+  padding: 40px 35px;
+  text-align: center;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 10px 35px #b58ab522;
+}
+
+.icono {
+  color: #d66ca4;
+  font-size: 38px;
+}
+
+h1 {
+  color: #a64d79;
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+h2 {
+  color: #754d80;
+}
+
+.subtitulo {
+  color: #8b7b91;
+}
+
+.tarjeta p {
+  line-height: 1.6;
+}
+
+.ilustracion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 25px auto;
+  border-radius: 50%;
+  background: #fce7f3;
+  color: #c65391;
+  font-size: 40px;
+}
+
+.boton {
+  display: block;
+  padding: 13px;
+  margin-top: 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton-principal {
+  background: #d66ca4;
+  color: white;
+}
+
+.boton-secundario {
+  background: #f3e8ff;
+  color: #8755a0;
+}

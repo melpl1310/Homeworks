@@ -1,0 +1,225 @@
+
+<div class="pagina">
+
+  <header class="encabezado">
+    <div>
+      <h1>FakeLoginAPP <span>✿</span></h1>
+      <p>Organiza tus tareas, organiza tu día.</p>
+    </div>
+
+    <div class="usuario">
+      <span>{{ email }}</span>
+      <button class="btn-salir" (click)="cerrarSesion()">
+        Cerrar sesión
+      </button>
+    </div>
+  </header>
+
+  <main class="contenido">
+
+    <section class="bienvenida">
+      <div>
+        <h2>¡Hola! 💗</h2>
+        <p>Estas son tus tareas. ¡Vamos a organizar el día!</p>
+      </div>
+
+      <div class="resumen">
+        <div class="dato">
+          <strong>{{ tareas.length }}</strong>
+          <span>Total</span>
+        </div>
+
+        <div class="dato pendientes">
+          <strong>{{ tareasPendientes }}</strong>
+          <span>Pendientes</span>
+        </div>
+
+        <div class="dato completadas">
+          <strong>{{ tareasCompletadas }}</strong>
+          <span>Completadas</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="columnas">
+
+      <section class="tarjeta formulario">
+        <h2>✿ Nueva tarea</h2>
+        <p class="ayuda">Anota lo que necesitas hacer.</p>
+
+        <form (ngSubmit)="agregarTarea()">
+
+          <label for="titulo">Título *</label>
+          <input
+            id="titulo"
+            type="text"
+            name="titulo"
+            [(ngModel)]="titulo"
+            placeholder="Ej. Estudiar para el examen"
+            required
+          />
+
+          <label for="descripcion">Descripción</label>
+          <textarea
+            id="descripcion"
+            name="descripcion"
+            [(ngModel)]="descripcion"
+            placeholder="Agrega algunos detalles..."
+            rows="4"
+          ></textarea>
+
+          <button class="btn-principal" type="submit">
+            + Agregar tarea
+          </button>
+
+        </form>
+      </section>
+
+      <section class="tarjeta lista">
+        <div class="titulo-lista">
+          <div>
+            <h2>Mis tareas</h2>
+            <p class="ayuda">Tu lista personal de actividades.</p>
+          </div>
+
+          <span class="contador">{{ tareas.length }}</span>
+        </div>
+
+        @if (error) {
+          <div class="mensaje-error">{{ error }}</div>
+        }
+
+        @if (cargando) {
+          <p class="vacio">Cargando tus tareas...</p>
+        } @else if (tareas.length === 0) {
+          <div class="vacio">
+            <span class="emoji">🌷</span>
+            <h3>Aún no tienes tareas</h3>
+            <p>Agrega tu primera tarea para comenzar.</p>
+          </div>
+        } @else {
+
+          <div class="lista-tareas">
+
+            @for (tarea of tareas; track tarea.id) {
+
+              <article
+                class="tarea"
+                [class.tarea-completada]="tarea.done"
+              >
+
+                @if (editandoId === tarea.id) {
+
+                  <div class="edicion">
+
+                    <label [for]="'titulo-' + tarea.id">
+                      Título
+                    </label>
+
+                    <input
+                      [id]="'titulo-' + tarea.id"
+                      [name]="'titulo-' + tarea.id"
+                      [(ngModel)]="tituloEdicion"
+                      required
+                    />
+
+                    <label [for]="'descripcion-' + tarea.id">
+                      Descripción
+                    </label>
+
+                    <textarea
+                      [id]="'descripcion-' + tarea.id"
+                      [name]="'descripcion-' + tarea.id"
+                      [(ngModel)]="descripcionEdicion"
+                      rows="2"
+                    ></textarea>
+
+                    <div class="acciones">
+                      <button
+                        class="btn-guardar"
+                        (click)="guardarEdicion(tarea)"
+                      >
+                        Guardar
+                      </button>
+
+                      <button
+                        class="btn-cancelar"
+                        (click)="cancelarEdicion()"
+                      >
+                        Cancelar
+                      </button>
+                    </div>
+
+                  </div>
+
+                } @else {
+
+                  <div class="tarea-contenido">
+
+                    <div class="tarea-titulo">
+                      <button
+                        class="btn-check"
+                        [class.check-activo]="tarea.done"
+                        (click)="cambiarEstado(tarea)"
+                        [attr.aria-label]="tarea.done
+                          ? 'Marcar como pendiente'
+                          : 'Marcar como completada'"
+                      >
+                        {{ tarea.done ? '✓' : '' }}
+                      </button>
+
+                      <h3>{{ tarea.title }}</h3>
+                    </div>
+
+                    @if (tarea.description) {
+                      <p class="descripcion-tarea">
+                        {{ tarea.description }}
+                      </p>
+                    }
+
+                    <span
+                      class="estado"
+                      [class.estado-done]="tarea.done"
+                    >
+                      {{ tarea.done ? 'Completada' : 'Pendiente' }}
+                    </span>
+
+                    <div class="acciones">
+                      <button
+                        class="btn-editar"
+                        (click)="comenzarEdicion(tarea)"
+                      >
+                        Editar
+                      </button>
+
+                      <button
+                        class="btn-eliminar"
+                        (click)="eliminarTarea(tarea)"
+                      >
+                        Eliminar
+                      </button>
+                    </div>
+
+                  </div>
+
+                }
+
+              </article>
+
+            }
+
+          </div>
+
+        }
+
+      </section>
+
+    </div>
+
+    <footer>
+      Hecho con cariño ♡ Un pequeño paso cada día.
+    </footer>
+
+  </main>
+
+</div>

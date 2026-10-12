@@ -1,0 +1,114 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+.pagina-login {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #fce7f3, #f3e8ff, #e0f2fe);
+}
+
+.tarjeta-login {
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 35px #b58ab522;
+}
+
+.volver {
+  color: #a64d79;
+  text-decoration: none;
+}
+
+.icono {
+  margin-top: 25px;
+  color: #d66ca4;
+  font-size: 38px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 8px;
+  color: #a64d79;
+  text-align: center;
+  font-size: 29px;
+}
+
+.descripcion {
+  margin-bottom: 28px;
+  color: #8b7b91;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  margin-top: 8px;
+  color: #684f70;
+  font-weight: 600;
+}
+
+input {
+  padding: 13px;
+  border: 1px solid #ead7e9;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #d66ca4;
+  box-shadow: 0 0 0 3px #fce7f3;
+}
+
+button {
+  margin-top: 15px;
+  padding: 13px;
+  border: none;
+  border-radius: 11px;
+  background: #d66ca4;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #c65391;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.mensaje-error {
+  color: #c03962;
+  font-size: 13px;
+}
+
+.registro {
+  margin-top: 23px;
+  color: #806e86;
+  text-align: center;
+  font-size: 14px;
+}
+
+.registro a {
+  color: #b34e89;
+  font-weight: 600;
+  text-decoration: none;
+}
