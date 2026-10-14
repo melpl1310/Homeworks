@@ -1,0 +1,311 @@
+:host {
+  display: block;
+  min-height: 100%;
+  color: #51445e;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.pagina {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(135deg, #fff5fa, #f5f0ff, #eef7ff);
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  padding: 24px 28px;
+  border: 1px solid #eadff5;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 15px #7555a510;
+}
+
+.encabezado-izquierda {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  min-width: 0;
+}
+
+.encabezado h1 {
+  margin: 0 0 6px;
+  color: #7555a5;
+  font-size: 28px;
+}
+
+.encabezado p {
+  margin: 0;
+  color: #887b98;
+}
+
+.usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  min-width: 0;
+}
+
+.usuario span {
+  color: #887b98;
+  font-size: 13px;
+}
+
+.usuario strong {
+  overflow-wrap: anywhere;
+  color: #7555a5;
+  font-size: 14px;
+}
+
+.btn-salir,
+.creacion form button,
+.btn-volver {
+  flex-shrink: 0;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 9px;
+  background: #9270c4;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-salir:hover,
+.creacion form button:hover,
+.btn-volver:hover {
+  background: #7955ad;
+}
+
+.contenido {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.creacion {
+  margin-bottom: 24px;
+  padding: 22px;
+  border: 1px solid #eadff5;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.creacion h2,
+.explorador h2 {
+  margin: 0 0 18px;
+  color: #7555a5;
+  font-size: 20px;
+}
+
+.creacion form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.creacion input,
+.creacion select {
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #dfd1ee;
+  border-radius: 9px;
+  outline: none;
+  background: #fdfaff;
+  color: #51445e;
+  font-size: 14px;
+}
+
+.creacion input {
+  flex: 1;
+}
+
+.creacion input:focus,
+.creacion select:focus {
+  border-color: #a58aca;
+}
+
+.creacion form button:disabled,
+.btn-eliminar:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.ubicacion {
+  margin: 18px 0 10px;
+  color: #887b98;
+  overflow-wrap: anywhere;
+}
+
+.btn-volver {
+  margin-top: 5px;
+  background: #b29bd5;
+}
+
+.mensaje {
+  margin: 14px 0 0;
+  color: #7555a5;
+  overflow-wrap: anywhere;
+}
+
+.explorador {
+  width: 100%;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #eadff5;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.elemento {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #eee5f6;
+  border-radius: 12px;
+  background: #fcfaff;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.elemento:hover {
+  border-color: #cdb8ec;
+  background: #f5efff;
+}
+
+.elemento-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.elemento-info:disabled {
+  cursor: default;
+}
+
+.icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+}
+
+.nombre {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #51445e;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-eliminar {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 6px 10px;
+  border: 1px solid #f0c7d5;
+  border-radius: 7px;
+  background: #fff0f5;
+  color: #b34469;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  border-color: #df9db5;
+  background: #fce0eb;
+}
+
+.detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding-left: 50px;
+  color: #887b98;
+  font-size: 12px;
+}
+
+.detalles small {
+  overflow-wrap: anywhere;
+}
+
+.vacio {
+  color: #887b98;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .pagina {
+    padding: 14px;
+  }
+
+  .encabezado {
+    align-items: flex-start;
+    padding: 18px;
+  }
+
+  .encabezado-izquierda {
+    flex: 1;
+  }
+
+  .encabezado h1 {
+    font-size: 23px;
+  }
+
+  .btn-salir {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  .creacion,
+  .explorador {
+    padding: 16px;
+  }
+
+  .creacion input {
+    flex-basis: 100%;
+  }
+
+  .creacion select,
+  .creacion form button {
+    flex: 1;
+  }
+
+  .elemento {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .detalles {
+    padding-left: 0;
+  }
+}

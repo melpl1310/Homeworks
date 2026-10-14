@@ -1,0 +1,113 @@
+<div class="pagina">
+  <header class="encabezado">
+    <div class="encabezado-izquierda">
+      <div class="titulo">
+        <h1>Mis archivos</h1>
+        <p>Organiza tus carpetas y documentos</p>
+      </div>
+
+      <div class="usuario">
+        <span>Sesión iniciada como</span>
+        <strong>{{ authService.usuario()?.email }}</strong>
+      </div>
+    </div>
+
+    <button class="btn-salir" (click)="cerrarSesion()">
+      Cerrar sesión
+    </button>
+  </header>
+
+  <main class="contenido">
+    <section class="creacion">
+      <h2>Crear elemento</h2>
+
+      <form (ngSubmit)="crearElemento()">
+        <input
+          type="text"
+          name="nombre"
+          [ngModel]="nombre()"
+          (ngModelChange)="nombre.set($event)"
+          placeholder="Nombre de la carpeta o archivo"
+          required
+        >
+
+        <select
+          name="tipo"
+          [ngModel]="tipo()"
+          (ngModelChange)="tipo.set($event)"
+        >
+          <option value="carpeta">Carpeta</option>
+          <option value="archivo">Archivo</option>
+        </select>
+
+        <button type="submit" [disabled]="cargando()">Crear</button>
+      </form>
+
+      <p class="ubicacion">
+        Ubicación actual: {{ carpetaActual().elemento.nombre }}
+      </p>
+
+      @if (carpetaActual().elemento.id !== 'raiz') {
+        <button class="btn-volver" (click)="volver()">
+          Volver
+        </button>
+      }
+
+      @if (mensaje()) {
+        <p class="mensaje">{{ mensaje() }}</p>
+      }
+    </section>
+
+    <section class="explorador">
+      <h2>Contenido de la carpeta</h2>
+
+      @if (cargando()) {
+        <p>Cargando elementos...</p>
+      } @else {
+        @if (elementos().length === 0) {
+          <p class="vacio">Esta carpeta está vacía.</p>
+        }
+
+        <div class="lista">
+          @for (elemento of elementos(); track elemento.elemento.id) {
+            <div class="elemento">
+              <button
+                class="elemento-info"
+                type="button"
+                (click)="abrirCarpeta(elemento)"
+                [disabled]="elemento.elemento.tipo === 'archivo'"
+              >
+                <span class="icono">
+                  {{ elemento.elemento.tipo === 'carpeta' ? '📁' : '📄' }}
+                </span>
+
+                <span class="nombre">
+                  {{ elemento.elemento.nombre }}
+                </span>
+              </button>
+
+              <button
+                class="btn-eliminar"
+                type="button"
+                (click)="eliminarElemento(elemento)"
+                [disabled]="cargando()"
+              >
+                Eliminar
+              </button>
+
+              <div class="detalles">
+                <span>
+                  {{ elemento.elemento.tipo === 'carpeta' ? 'Carpeta' : 'Archivo' }}
+                </span>
+
+                <small>
+                  Creado por: {{ elemento.elemento.correoCreador }}
+                </small>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </section>
+  </main>
+</div>
