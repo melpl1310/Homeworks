@@ -1,0 +1,44 @@
+
+<div class="contenedor">
+  <div class="tarjeta">
+
+    <h1>Crear cuenta</h1>
+    <p>Comienza a organizar tus tareas</p>
+
+    <form (ngSubmit)="registrar()">
+
+      <label>Correo electrónico</label>
+
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Ingresa tu correo"
+        required
+      >
+
+      <label>Contraseña</label>
+
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        placeholder="Crea una contraseña"
+        required
+      >
+
+      <button type="submit" [disabled]="procesando()">
+        {{ procesando() ? 'Registrando…' : 'Registrarme' }}
+      </button>
+
+    </form>
+
+    <p class="mensaje">{{ mensaje() }}</p>
+
+    <p>
+      ¿Ya tienes una cuenta?
+      <a (click)="irLogin()">Inicia sesión</a>
+    </p>
+
+  </div>
+</div>

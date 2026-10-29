@@ -1,0 +1,45 @@
+
+<div class="pagina">
+  <header class="encabezado">
+    <div>
+      <h1>Mis tareas</h1>
+      <p>Organiza tu día de una manera sencilla</p>
+    </div>
+    <button class="salir" (click)="cerrarSesion()">Cerrar sesión</button>
+  </header>
+
+  <div class="contenido">
+    <section class="perfil">
+      @if (avatarUrl()) {
+        <img
+          [src]="avatarUrl()"
+          alt="Foto de perfil"
+          class="avatar"
+        >
+      } @else {
+        <div class="avatar vacio">👤</div>
+      }
+
+      <div class="datos-perfil">
+        <h2>Tu perfil</h2>
+        <p>Sube una foto para personalizar tu espacio.</p>
+        <span class="formatos">JPG, PNG, WEBP o GIF · máximo 2 MB</span>
+        <p class="correo">{{ usuario()?.email }}</p>
+        <p class="mensaje">{{ mensaje() }}</p>
+      </div>
+
+      <label for="avatar" class="subir">Elegir imagen</label>
+      <input
+        type="file"
+        id="avatar"
+        accept="image/jpeg,image/png,image/webp,image/gif"
+        (change)="subirAvatar($event)"
+      >
+    </section>
+
+    <main class="seccion-tareas">
+      <app-tareas></app-tareas>
+      <app-realtime></app-realtime>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+:host {
+  display: block;
+}
+
+.tarjeta-realtime {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 36px;
+  padding: 7px 12px;
+  background: #ffffffa6;
+  border: 1px solid #ffffffc9;
+  border-radius: 10px;
+}
+
+.estado {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #729b83;
+  font-size: 0.73rem;
+  font-weight: 600;
+}
+
+.punto {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #80c99b;
+  box-shadow: 0 0 0 3px #80c99b24;
+}
+
+.contador {
+  color: #8564a8;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}

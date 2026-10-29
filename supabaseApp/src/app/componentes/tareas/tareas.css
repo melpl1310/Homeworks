@@ -1,0 +1,251 @@
+
+:host {
+  display: block;
+  min-height: 0;
+}
+
+.tarjeta-tareas {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding: 17px 20px;
+  background: white;
+  border: 1px solid #ffffffc9;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px #66436b0d;
+}
+
+h2 {
+  color: #bd6495;
+  margin: 0 0 7px;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.tarjeta-tareas > p {
+  color: #817783;
+  margin: 0;
+}
+
+.formulario {
+  display: flex;
+  gap: 8px;
+  margin: 15px 0 12px;
+}
+
+.formulario input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 11px;
+  border: 1px solid #e8cddd;
+  border-radius: 10px;
+  outline: 0;
+  color: #514853;
+  font: inherit;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.formulario input::placeholder {
+  color: #a79ba8;
+}
+
+.formulario input:focus {
+  border-color: #d77eac;
+  box-shadow: 0 0 0 4px #d77eac24;
+}
+
+.formulario button {
+  padding: 9px 13px;
+  border: none;
+  border-radius: 10px;
+  background: #d77eac;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 14px #bd649526;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.formulario button:hover {
+  background: #bd6495;
+  transform: translateY(-1px);
+}
+
+.formulario button:focus-visible,
+.acciones button:focus-visible,
+.informacion input:focus-visible {
+  outline: 3px solid #bd649580;
+  outline-offset: 3px;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 2px 3px 2px 0;
+}
+
+.tarea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #fff6fa;
+  border: 1px solid #f3dce9;
+  border-radius: 11px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.tarea:hover {
+  border-color: #e8cddd;
+  box-shadow: 0 5px 15px #bd649510;
+}
+
+.informacion {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #554b57;
+  line-height: 1.45;
+}
+
+.detalle-tarea {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+
+.titulo-tarea {
+  overflow-wrap: anywhere;
+}
+
+.estado-tarea {
+  color: #8564a8;
+  font-size: 0.7rem;
+}
+
+.estado-tarea.terminada {
+  color: #729b83;
+}
+
+.completada {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.acciones {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.acciones button {
+  padding: 6px 9px;
+  border: none;
+  border-radius: 9px;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.acciones button:hover {
+  filter: brightness(0.97);
+  transform: translateY(-1px);
+}
+
+.editar {
+  background: #eee5ff;
+  color: #8564a8;
+}
+
+.completar {
+  background: #f8edf5;
+  color: #bd6495;
+}
+
+.eliminar {
+  background: #ffe5e9;
+  color: #c45c75;
+}
+
+.vacio {
+  padding: 22px 14px;
+  text-align: center;
+  color: #817783;
+  background: #fffafd;
+  border: 1px dashed #e8cddd;
+  border-radius: 11px;
+}
+
+.vacio p {
+  margin: 0 0 6px;
+  color: #bd6495;
+  font-weight: 600;
+}
+
+.vacio span {
+  font-size: 0.92rem;
+}
+
+.resumen {
+  margin-top: 12px;
+  padding: 9px 12px;
+  background: #f8edf5;
+  color: #bd6495;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.mensaje {
+  color: #bd6495;
+  overflow-wrap: anywhere;
+  margin: -7px 0 12px;
+}
+
+@media (max-width: 550px) {
+  .tarjeta-tareas {
+    height: auto;
+    min-height: 250px;
+    overflow: visible;
+  }
+
+  .formulario {
+    flex-wrap: wrap;
+  }
+
+  .formulario input {
+    flex-basis: 100%;
+  }
+
+  .formulario button {
+    width: 100%;
+  }
+
+  .tarea {
+    flex-wrap: wrap;
+  }
+
+  .acciones {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .lista {
+    overflow: visible;
+  }
+}

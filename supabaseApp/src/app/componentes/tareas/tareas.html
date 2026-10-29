@@ -1,0 +1,85 @@
+
+<div class="tarjeta-tareas">
+
+  <h2>Mis tareas</h2>
+
+  <p>Organiza tus actividades</p>
+
+  <form (ngSubmit)="agregarTarea()" class="formulario">
+
+    <input
+      type="text"
+      name="titulo"
+      [(ngModel)]="titulo"
+      placeholder="Escribe una nueva tarea"
+    >
+
+    <button type="submit" [disabled]="guardando">
+      {{ guardando ? 'Agregando…' : '+ Agregar' }}
+    </button>
+
+  </form>
+
+  <p class="mensaje">{{ mensaje }}</p>
+
+  <div class="lista">
+
+    @for (tarea of tareas(); track tarea.id) {
+
+      <div class="tarea">
+
+        <div class="informacion">
+          <div class="detalle-tarea">
+            <span class="titulo-tarea" [class.completada]="tarea.completada">
+              {{ tarea.titulo }}
+            </span>
+            <span class="estado-tarea" [class.terminada]="tarea.completada">
+              {{ tarea.completada ? 'Completada' : 'Pendiente' }}
+            </span>
+          </div>
+        </div>
+
+        <div class="acciones">
+          <button
+            type="button"
+            class="completar"
+            (click)="completarTarea(tarea)"
+          >
+            {{ tarea.completada ? 'Reabrir' : 'Completar' }}
+          </button>
+          <button
+            type="button"
+            class="editar"
+            (click)="editarTarea(tarea)"
+          >
+            Editar
+          </button>
+
+          <button
+            type="button"
+            class="eliminar"
+            (click)="eliminarTarea(tarea.id)"
+          >
+            Eliminar
+          </button>
+
+        </div>
+
+      </div>
+
+    } @empty {
+
+      <div class="vacio">
+        <p>¡No tienes tareas todavía!</p>
+        <span>Agrega tu primera tarea.</span>
+      </div>
+
+    }
+
+  </div>
+
+  <div class="resumen">
+    Total de tareas: {{ tareas().length }}
+  </div>
+
+</div>

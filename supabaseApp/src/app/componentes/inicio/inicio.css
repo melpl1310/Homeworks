@@ -1,0 +1,260 @@
+.pagina {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 14px;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  padding: 20px clamp(20px, 4vw, 56px);
+  background: linear-gradient(135deg, #fceef5 0%, #f2eafa 52%, #eaf4fc 100%);
+}
+
+.encabezado {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.encabezado h1 {
+  margin: 0 0 3px;
+  color: #bd6495;
+  font-size: 1.45rem;
+  letter-spacing: -0.035em;
+}
+
+.encabezado p {
+  margin: 0;
+  color: #7d7180;
+  font-size: 0.82rem;
+}
+
+.salir {
+  padding: 8px 13px;
+  border: 1px solid #e8cddd;
+  border-radius: 9px;
+  background: #ffffffc9;
+  color: #745d70;
+  font: inherit;
+  font-size: 0.76rem;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.salir:hover {
+  background: #f8e6f0;
+  color: #bd6495;
+}
+
+.contenido {
+  display: grid;
+  grid-template-columns: minmax(190px, 220px) minmax(0, 1fr);
+  gap: 14px;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 0;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: start;
+  padding: 20px 16px;
+  background: white;
+  border: 1px solid #ffffffc9;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 24px #66436b0d;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 4px #f8edf5;
+}
+
+.vacio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7e5f0;
+  font-size: 32px;
+}
+
+.datos-perfil {
+  min-width: 0;
+}
+
+.perfil h2 {
+  margin: 4px 0 5px;
+  color: #bd6495;
+  font-size: 0.95rem;
+}
+
+.perfil p {
+  margin: 0 0 5px;
+  color: #817783;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.perfil .formatos {
+  display: block;
+  margin: 5px 0 10px;
+  color: #a297a3;
+  font-size: 0.64rem;
+}
+
+.perfil .correo {
+  margin-top: 8px;
+}
+
+#avatar {
+  display: none;
+}
+
+.subir {
+  display: inline-block;
+  padding: 8px 11px;
+  border-radius: 9px;
+  background: #f8edf5;
+  color: #bd6495;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.subir:hover {
+  background: #f2eafa;
+}
+
+.salir:focus-visible,
+.subir:focus-visible {
+  outline: 2px solid #bd6495;
+  outline-offset: 2px;
+}
+
+.seccion-tareas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.seccion-tareas app-tareas,
+.seccion-tareas app-realtime {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+}
+
+.seccion-tareas app-tareas {
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.seccion-tareas app-realtime {
+  flex: 0 0 auto;
+}
+
+.mensaje {
+  color: #bd6495;
+  font-size: 0.72rem;
+}
+
+@media (max-width: 750px) {
+  .pagina {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible;
+    grid-template-rows: auto auto;
+    gap: 18px;
+    padding: 22px 16px;
+  }
+
+  .encabezado,
+  .contenido {
+    max-width: 560px;
+  }
+
+  .contenido {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .perfil {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    justify-items: start;
+    gap: 0 12px;
+    padding: 11px 13px;
+    text-align: left;
+  }
+
+  .avatar {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+  }
+
+  .datos-perfil {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+
+  .perfil h2 {
+    margin: 0 0 3px;
+  }
+
+  .perfil p {
+    margin: 0;
+  }
+
+  .perfil .formatos,
+  .perfil .correo {
+    display: none;
+  }
+
+  .subir {
+    grid-column: 3;
+    grid-row: 1 / span 3;
+    white-space: nowrap;
+  }
+
+  .seccion-tareas app-tareas {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 420px) {
+  .pagina {
+    padding: 18px 12px;
+  }
+
+  .encabezado h1 {
+    font-size: 1.3rem;
+  }
+
+  .subir {
+    padding: 7px 8px;
+    font-size: 0.68rem;
+  }
+}
