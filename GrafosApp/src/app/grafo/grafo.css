@@ -1,0 +1,30 @@
+.grafo {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  overflow: hidden;
+  border: 1px solid #eadced;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 1px 1px, #eadced 1px, transparent 0) 0 0 / 24px 24px,
+    #fff9fd;
+}
+
+.grafo svg {
+  display: block;
+  width: 100%;
+  min-height: 460px;
+}
+
+.estado-vacio {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  margin: 0;
+  color: #82718d;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}

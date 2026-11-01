@@ -1,0 +1,156 @@
+<main class="pagina">
+  <header class="encabezado">
+    <div>
+      <p class="sobrelinea">GESTIÓN DE RED</p>
+      <h1>Personas y ciudades</h1>
+      <p class="subtitulo">Crea y explora las relaciones entre cada persona y su ciudad.</p>
+    </div>
+    <div class="contador" aria-label="Elementos registrados">
+      <span><strong>{{ personas.length }}</strong> personas</span>
+      <span><strong>{{ ciudades.length }}</strong> ciudades</span>
+    </div>
+  </header>
+
+  @if (mensaje) {
+    <p class="mensaje" [class.error]="tipoMensaje === 'error'" role="status" aria-live="polite">
+      {{ mensaje }}
+    </p>
+  }
+
+  <section class="panel formularios" aria-label="Agregar elementos al grafo">
+    <form (ngSubmit)="agregarCiudad()">
+      <h2>Agregar ciudad</h2>
+      <label for="nombre-ciudad">Nombre de la ciudad</label>
+      <div class="campo-accion">
+        <input
+          id="nombre-ciudad"
+          name="nombreCiudad"
+          type="text"
+          [(ngModel)]="nombreCiudad"
+          placeholder="Ej. Cali"
+          required>
+        <button type="submit">Agregar ciudad</button>
+      </div>
+    </form>
+
+    <form (ngSubmit)="agregarPersona()">
+      <h2>Agregar persona</h2>
+      <div class="campos-persona">
+        <div>
+          <label for="nombre-persona">Nombre</label>
+          <input
+            id="nombre-persona"
+            name="nombrePersona"
+            type="text"
+            [(ngModel)]="nombrePersona"
+            placeholder="Ej. Melanie"
+            required>
+        </div>
+        <div>
+          <label for="edad-persona">Edad</label>
+          <input
+            id="edad-persona"
+            name="edadPersona"
+            type="number"
+            [(ngModel)]="edadPersona"
+            min="0"
+            max="130"
+            step="1"
+            required>
+        </div>
+      </div>
+      <label for="ciudad-persona">Ciudad</label>
+      <select
+        id="ciudad-persona"
+        name="ciudadSeleccionada"
+        [(ngModel)]="ciudadSeleccionada"
+        required>
+        <option value="" disabled>Selecciona una ciudad</option>
+        @for (ciudad of ciudades; track ciudad.id) {
+          <option [value]="ciudad.id">{{ ciudad.nombre }}</option>
+        }
+      </select>
+      <button type="submit" [disabled]="ciudades.length === 0">Agregar persona al grafo</button>
+      @if (ciudades.length === 0) {
+        <p class="ayuda">Primero agrega una ciudad para poder registrar personas.</p>
+      }
+    </form>
+  </section>
+
+  <section class="seccion" aria-labelledby="titulo-grafo">
+    <div class="titulo-seccion">
+      <div>
+        <p class="sobrelinea">VISTA INTERACTIVA</p>
+        <h2 id="titulo-grafo">Grafo de relaciones</h2>
+      </div>
+      <span class="leyenda"><i class="punto-persona"></i> Persona <i class="punto-ciudad"></i> Ciudad</span>
+    </div>
+    <app-grafo [nodos]="nodos" [aristas]="aristas"></app-grafo>
+  </section>
+
+  <section class="panel consulta" aria-labelledby="titulo-consulta">
+    <div>
+      <p class="sobrelinea">CONSULTA</p>
+      <h2 id="titulo-consulta">Personas por ciudad</h2>
+      <label for="ciudad-consulta">Selecciona una ciudad</label>
+      <select
+        id="ciudad-consulta"
+        name="ciudadConsulta"
+        [(ngModel)]="ciudadConsulta"
+        (ngModelChange)="consultarHabitantes()">
+        <option value="">Seleccionar ciudad</option>
+        @for (ciudad of ciudades; track ciudad.id) {
+          <option [value]="ciudad.id">{{ ciudad.nombre }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="resultado" aria-live="polite">
+      @if (ciudadConsulta) {
+        @if (habitantes.length > 0) {
+          <p class="resultado-titulo">{{ habitantes.length }} personas registradas</p>
+          @for (persona of habitantes; track persona.id) {
+            <article class="persona">
+              <span class="avatar">{{ persona.nombre.charAt(0).toUpperCase() }}</span>
+              <span><strong>{{ persona.nombre }}</strong><small>{{ persona.edad }} años</small></span>
+            </article>
+          }
+        } @else {
+          <p class="ayuda">No hay personas registradas en esta ciudad.</p>
+        }
+      } @else {
+        <p class="ayuda">Elige una ciudad para consultar sus habitantes.</p>
+      }
+    </div>
+  </section>
+
+  <section class="panel registros" aria-labelledby="titulo-registros">
+    <div class="titulo-seccion">
+      <div>
+        <p class="sobrelinea">ELEMENTOS DEL GRAFO</p>
+        <h2 id="titulo-registros">Administrar registros</h2>
+      </div>
+    </div>
+    @if (nodos.length === 0) {
+      <p class="ayuda">Todavía no hay elementos. Agrega una ciudad para comenzar.</p>
+    } @else {
+      <ul class="lista-registros">
+        @for (ciudad of ciudades; track ciudad.id) {
+          <li>
+            <span class="tipo-registro ciudad">Ciudad</span>
+            <strong>{{ ciudad.nombre }}</strong>
+            <button type="button" class="boton-secundario" (click)="eliminarNodo(ciudad.id)">Eliminar</button>
+          </li>
+        }
+        @for (persona of personas; track persona.id) {
+          <li>
+            <span class="tipo-registro persona">Persona</span>
+            <strong>{{ persona.nombre }}</strong>
+            <span class="detalle-registro">{{ persona.edad }} años · {{ nombreCiudadDe(persona.ciudadId) }}</span>
+            <button type="button" class="boton-secundario" (click)="eliminarNodo(persona.id)">Eliminar</button>
+          </li>
+        }
+      </ul>
+    }
+  </section>
+</main>
