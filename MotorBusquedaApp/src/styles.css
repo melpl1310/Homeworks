@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  --color-ink: #4a3651;
+  --color-muted: #826f8b;
+  --color-surface: #fff;
+  --color-surface-soft: #fff7fc;
+  --color-border: #f0deee;
+  --color-pink: #f4d5e8;
+  --color-pink-strong: #eac1db;
+  --color-purple: #e7def8;
+  --color-purple-strong: #d7c8f1;
+  --color-accent: #8d5b9e;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff8fc 0%, #f7f2ff 100%);
+  font-family: Arial, sans-serif;
+  color: var(--color-ink);
+}

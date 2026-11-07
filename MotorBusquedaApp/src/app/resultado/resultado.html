@@ -1,0 +1,39 @@
+<section class="results-container">
+
+  <h2>Productos más populares</h2>
+
+  @if (resultados.length > 0) {
+
+    @for (producto of resultados; track producto.name; let i = $index) {
+
+      <div class="result-item">
+
+        <div class="position">
+          {{ i + 1 }}
+        </div>
+
+        <div class="product-info">
+
+          <h3>{{ producto.name }}</h3>
+
+          <p>Popularidad: {{ producto.popularity }}/100</p>
+
+        </div>
+
+        <div class="score">
+          {{ producto.popularity }}
+        </div>
+
+      </div>
+
+    }
+
+  } @else {
+
+    <p class="empty">
+      Realiza una búsqueda para ver los resultados.
+    </p>
+
+  }
+
+</section>

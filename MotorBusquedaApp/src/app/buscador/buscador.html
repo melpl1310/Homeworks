@@ -1,0 +1,76 @@
+<main class="page-shell">
+  <header class="hero">
+    <div class="hero-copy">
+      <h1>Motor de busqueda inteligente</h1>
+      <p class="hero-description">
+        Explora productos por nombre y descubre primero los más populares.
+      </p>
+    </div>
+    <div class="catalog-stat" aria-label="Productos en el catálogo">
+      <span class="stat-value">{{ productos.length }}</span>
+      <span class="stat-label">productos<br />en el catálogo</span>
+    </div>
+  </header>
+
+  <div class="workspace">
+    <section class="panel search-panel">
+      <div class="section-heading">
+        <span class="step-number">01</span>
+        <div>
+          <h2>Buscar productos</h2>
+          <p>Escribe el inicio de un nombre para ver las mejores coincidencias.</p>
+        </div>
+      </div>
+
+      <div class="search-fields">
+        <div class="form-group prefix-field">
+          <label for="search-prefix">Prefijo de búsqueda</label>
+          <input
+            id="search-prefix"
+            type="text"
+            [(ngModel)]="prefijo"
+            placeholder="Prueba con «air»"
+            (keyup.enter)="buscar()"
+          />
+        </div>
+
+        <div class="form-group quantity-field">
+          <label for="result-count">Resultados</label>
+          <input id="result-count" type="number" [(ngModel)]="cantidad" min="1" />
+        </div>
+      </div>
+
+      <div class="search-actions">
+        <button class="btn-primary" type="button" (click)="buscar()">Buscar productos</button>
+        <button class="btn-secondary" type="button" (click)="limpiar()">Limpiar</button>
+      </div>
+      <p class="message" aria-live="polite">{{ mensaje }}</p>
+    </section>
+
+    <section class="panel add-panel">
+      <div class="section-heading">
+        <span class="step-number step-number-pink">02</span>
+        <div>
+          <h2>Agregar producto</h2>
+          <p>Añade una opción nueva al catálogo.</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="product-name">Nombre del producto</label>
+        <input id="product-name" type="text" [(ngModel)]="nombre" placeholder="Ejemplo: air max" />
+      </div>
+
+      <div class="form-group">
+        <label for="product-popularity">Popularidad <span>0–100</span></label>
+        <input id="product-popularity" type="number" [(ngModel)]="popularidad" min="0" max="100" />
+      </div>
+
+      <button class="btn-add" type="button" (click)="agregarProducto()">Añadir al catálogo</button>
+    </section>
+  </div>
+
+  <app-resultados [resultados]="resultados"></app-resultados>
+
+  <app-productos [productos]="productos"></app-productos>
+</main>
